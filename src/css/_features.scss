@@ -1,0 +1,41 @@
+@import 'icons';
+@import 'adaptive';
+
+.container{
+	
+	width: 95%;
+	height: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.col{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.feature{
+	margin-left: 10%;
+	width: 80%;
+	height: 33%;
+	display: flex;
+	flex-direction: row;
+}
+
+.desc{
+	word-wrap: none;
+	padding-left: 2%;
+	width: 82%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-family: "Work Sans",sans-serif;
+	font-weight: 300;
+	font-size: 3.5vw;
+}
+.letsp{
+	letter-spacing: -2px;
+}

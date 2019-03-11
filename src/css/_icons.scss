@@ -1,0 +1,45 @@
+@import 'adaptive';
+.icon{
+	width: 18%;
+	height: 72%;
+	border-radius: 50%;
+	background-size: 80% 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	@include respond-to(phone-tablet){
+		height: 50%;
+	}
+}
+.stopwatch{
+	background-image: url(../img/icons/stopwatch.svg);
+	background-color: rgb(42, 45, 224);
+	background-position-y: 45%;
+}
+.wallet{
+	background-image: url(../img/icons/wallet.svg);
+	background-color: rgb(83, 194, 61);
+	background-size: 70% 70%;
+	background-position-y: 45%;
+}
+.star{
+	background-image: url(../img/icons/star.svg);
+	background-color: rgb(233, 74, 74);
+	background-size: 80% 80%;
+	background-position-y: 45%;
+}
+.service{
+	background-image: url(../img/icons/service.svg);
+	background-color: rgb(24, 175, 106);
+	background-size: 80% 80%;
+	background-position-x: 55%;
+}
+.add{
+	background-image: url(../img/icons/add.svg);
+	background-color: rgb(162, 83, 199);
+	background-size: 80% 80%;
+}
+.loyal{
+	background-image: url(../img/icons/loyalty.svg);
+	background-color: rgb(247, 186, 23);
+	background-size: 70% 70%;
+}
