@@ -1,0 +1,79 @@
+@import 'features';
+
+.section3{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #1f1f1f;
+	margin-top: 5%;
+}
+.section3>h1{
+	color: white;
+	line-height: 1%;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 300;
+	font-size: 4vw;
+	text-transform: uppercase;
+}
+.contS3{
+	width: 95%;
+	height: 90%;
+	display: flex;
+	flex-direction: row;
+}
+.mapCont{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+.map{
+	width: 80%;
+	height: 80%;
+	background-image: url("../img/map.png");
+	background-size: 100% 100%;
+	border: 2px solid white;
+}
+.address{
+	color: white;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 300;
+	font-size: 2vw;
+}
+.contactCont{
+	width: 50%;
+	height: 90%;
+	display: flex;
+	justify-content: center;	
+}
+.formContact{
+	width: 80%;
+}
+.inContact{
+	color: white;
+	font-family: "Work Sans",sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 0.03vw solid white;
+	width: 100%;
+	height: 10%;
+}
+.inContact::placeholder{
+	color:white;
+	font-size:0.7em;
+}
+.bigIn{
+	height: 40%;
+	resize: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

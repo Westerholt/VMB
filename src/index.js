@@ -4,6 +4,8 @@ import './css/index.css';
 import Nav from './Nav';
 import Sect1 from './Sect1';
 import Sect2 from './Sect2';
+import Sect3 from './Sect3';
+import Modal from './Modal';
 
 class Main extends React.Component{
     render(){
@@ -12,6 +14,8 @@ class Main extends React.Component{
                 <Nav />
                 <Sect1 />
                 <Sect2 />
+                <Modal />
+                <Sect3 />
             </div>
         );
     }
