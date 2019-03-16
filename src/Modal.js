@@ -6,6 +6,7 @@ class Modal extends React.Component{
         $('#modalWindow').css('display', 'none');
     }
     componentDidMount(){
+        
         var rto;
         var rt=$('#roomType');
         rt.on("change",function() {
@@ -55,7 +56,31 @@ class Modal extends React.Component{
                         $("#btn").addClass('error');
                         $("#btn").addClass('animate');
                     }else{
-                        this.send();
+                        
+                        var data1= {
+                            name:$('#name').val(),
+                            username:$('#uname').val(),
+                            password:$('#password').val(),
+                            sleepPlaces: places,
+                            roomsAmnt: rooms,
+                            apartType:$('#roomType').val(),
+                            checkin:$('#checkIn').val(),
+                            checkout:$('#checkOut').val()
+                        }
+                        $.ajax({
+                            url: "action.php",
+                            type: "POST",
+                            data: data1,
+                            success: function(response) {
+                                $("#btn").addClass('success');
+                                $("#btn").addClass('animate');
+                            },
+                            error: function(response) {
+                                $("#btn").addClass('error');
+                                $("#btn").addClass('animate');
+                
+                         }
+                        });
                         return false; 
                     }  
                 }else{
@@ -65,32 +90,7 @@ class Modal extends React.Component{
         );
         
     }
-    send=()=>{
-        var data1= {
-            name:$('#name').val(),
-            username:$('#uname').val(),
-            password:$('#password').val(),
-            sleepPlaces: places,
-            roomsAmnt: rooms,
-            apType:$('#roomType').val(),
-            checkIn:$('#checkIn').val(),
-            checkOut:$('#checkOut').val()
-        }
-        $.ajax({
-            url: "action.php",
-            type: "POST",
-            data: data1,
-            success: function(response) {
-                $("#btn").addClass('success');
-                $("#btn").addClass('animate');
-            },
-            error: function(response) {
-                $("#btn").addClass('error');
-                $("#btn").addClass('animate');
 
-         }
-        });
-    }
     render(){
         return(
             <div className="modalRoot" id="modalWindow">
@@ -100,14 +100,14 @@ class Modal extends React.Component{
                             <button className="closeBut" onClick={()=>this.hide()}>X</button>
                         </div>
                         <div className="bottom">
-                                <form method="post" id="ajax_form" className='bookForm' action="action_ajax_form.php">
+                                <form method="post" id="ajax_form" className='bookForm' action="action.php">
                                     <input className="in" id='name' type="text" placeholder="Enter your name" name="name"/><br/><br/>
                                     <input className="in" id='uname' type="text" placeholder="Enter your username" name="name"/><br/><br/>
                                     <input className="in" id='password' type="password" placeholder="Enter your password" name="name"/><br/><br/>
                                     <select name="rType" className='in' id="roomType">
                                         <option value="0">Select appartment type</option>
                                         <option value="econom">Econom</option>
-                                        <option value="basic">Basic</option>
+                                        <option value="medium">Basic</option>
                                         <option value="business">Business</option>
                                     </select>
                                     <select name="places" className='in' id="places">
