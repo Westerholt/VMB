@@ -19,7 +19,7 @@ class Modal extends React.Component{
                 case 'Basic':
                     pl.html('<option value="12">1 room and 2 places</option><option value="24">2 rooms and 4 places</option>');
                     break;
-                case 'Basic':
+                case 'Business':
                     pl.html('<option value="24">2 rooms and 4 places</option><option value="36">3 rooms and 6 places</option>');
                     break;    
                 default:
@@ -65,6 +65,7 @@ class Modal extends React.Component{
                             roomsAmnt: rooms,
                             apartType:$('#roomType').val(),
                             checkin:$('#checkIn').val(),
+                            company:$('#company').val(),
                             checkout:$('#checkOut').val()
                         }
                         $.ajax({
@@ -72,6 +73,9 @@ class Modal extends React.Component{
                             type: "POST",
                             data: data1,
                             success: function(response) {
+                                var data_array = $.parseJSON(response);
+                                alert(data_array['uID']);
+                                alert(data_array['aID']);
                                 $("#btn").addClass('success');
                                 $("#btn").addClass('animate');
                             },
@@ -101,16 +105,18 @@ class Modal extends React.Component{
                         </div>
                         <div className="bottom">
                                 <form method="post" id="ajax_form" className='bookForm' action="action.php">
-                                    <input className="in" id='name' type="text" placeholder="Enter your name" name="name"/><br/><br/>
-                                    <input className="in" id='uname' type="text" placeholder="Enter your username" name="name"/><br/><br/>
-                                    <input className="in" id='password' type="password" placeholder="Enter your password" name="name"/><br/><br/>
-                                    <select name="rType" className='in' id="roomType">
+                                    <input className="in" id='name' type="text" placeholder="Enter your name" name="name" required="required"/><br/><br/>
+                                    <input className="in" id='uname' type="text" placeholder="Enter your username" name="name" required="required"/><br/><br/>
+                                    <input className="in" id='password' type="password" placeholder="Enter your password" name="name" required="required"/><br/><br/>
+                                    <input className="in" id='company' type="text" placeholder="Company name (optional)" name="name"/><br/><br/>
+
+                                    <select name="rType" className='in' id="roomType" required="required">
                                         <option value="0">Select appartment type</option>
                                         <option value="econom">Econom</option>
                                         <option value="medium">Basic</option>
                                         <option value="business">Business</option>
                                     </select>
-                                    <select name="places" className='in' id="places">
+                                    <select name="places" className='in' id="places" required="required">
                                         <option value="0">Select rooms and places</option>
 
                                     </select>

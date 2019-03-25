@@ -6,9 +6,7 @@
 		echo "Упс, походу чёт сломалось :C Ща всё буит <br>";
 		exit;
 	}
-	mysqli_query($connect,"SET @apId=(SELECT apartId FROM Users WHERE `checkOut`<NOW());
-	DELETE FROM Users WHERE checkOut < NOW();
-	UPDATE Apartment SET `occupied`=0 WHERE `id`=@apId;") or die(mysqli_error($connect));
+	mysqli_query($connect,"UPDATE UsersInAp SET `occupied`='0' WHERE `checkOut`<NOW()") or die(mysqli_error($connect));
 	mysqli_close($connect);
 
 ?>

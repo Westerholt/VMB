@@ -33,6 +33,7 @@
 }
 
 .modal {
+  overflow: scroll;
   position: relative;
   background-color: white;
   margin: auto;
