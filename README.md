@@ -4,11 +4,11 @@
 ### `В ПЛАНАХ`
 
 	`Frontend`
-		- [ ] this is an incomplete itemДобавить просмотр contents номера
-		- [ ] this is an incomplete itemЛичный кабинет(icons)
+		- [ ] Добавить просмотр contents номера
+		- [ ] Личный кабинет(icons)
 	`Backend`
-		- [ ] this is an incomplete itemВозможность предложить юзеру альтернативу, если все номера данного типа заняты
-		- [ ] this is an incomplete itemЛичный кабинет(checkout now)
+		- [ ] Возможность предложить юзеру альтернативу, если все номера данного типа заняты
+		- [ ] Личный кабинет(checkout now)
 
 ###`Последние изменения`
 
